@@ -1,0 +1,29 @@
+<h1 class="text-center mb-3">ユーザー一覧</h1>
+
+<div class="mx-auto mb-3" style="width: 80%;">
+    <table class="table table-striped table-hover limited-width-table text-center">
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                名前
+            </th>
+        </tr>
+        
+        <% @users.each do |user| %>
+            <tr>
+                <th>
+                    <%= user.id %>
+                </th>
+                <th>
+                    <%= user.name %>
+                </th>
+            </tr>
+        <% end %>
+        
+    </table>
+</dev>
+
+<%= link_to "メンバー追加", new_users_path %>
+
