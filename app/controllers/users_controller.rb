@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all #allは全てのデータを取得するメソッド
+    p @users
   end
 
 
@@ -10,12 +11,12 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new() #user_paramsは下記で定義しているメソッド
+    @user = User.new(user_params) #user_paramsは下記で定義しているメソッド
     
     if @user.save                 #saveはデータを保存するメソッド
       redirect_to action: :index  #indexアクションにリダイレクト
     else
-      render :new, status: :unprocessable_entity #newアクションを再度表示
+      render :new #newアクションを再度表示
     end
   end
 
