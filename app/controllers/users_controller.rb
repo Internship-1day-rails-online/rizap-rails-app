@@ -6,17 +6,20 @@ class UsersController < ApplicationController
   end
 
 
+  def show
+    @user = User.find(params[:id])
+  end
+
   def new
     @user = User.new #newは新規作成するメソッド
   end
 
   def create
-    @user = User.new(user_params) #user_paramsは下記で定義しているメソッド
-    
+    @user = User.new(user_params) #user_paramsは下記のprivateメソッド
     if @user.save                 #saveはデータを保存するメソッド
-      redirect_to action: :index  #indexアクションにリダイレクト
+      redirect_to users_path      #/usersにリダイレクト
     else
-      render :new #newアクションを再度表示
+      render :new                 #newのviewをレンダリング
     end
   end
 
