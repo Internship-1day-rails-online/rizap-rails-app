@@ -2,6 +2,8 @@
 
 <div class="mx-auto mb-3" style="width: 80%;">
     <table class="table table-striped table-hover limited-width-table text-center">
+<div>
+    <table>
         <tr>
             <th>
                 ID
@@ -18,6 +20,10 @@
                 </th>
                 <th>
                   <%= link_to user.name, user_path(user.id) %>
+                    <%= user.id %>
+                </th>
+                <th>
+                    <%= user.name %>
                 </th>
             </tr>
         <% end %>
