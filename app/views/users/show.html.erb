@@ -1,0 +1,27 @@
+#index.html.erb
+<h1>ユーザー一覧</h1>
+
+<div>
+    <table>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                名前
+            </th>
+        </tr>
+        
+        <% @users.each do |user| %>
+            <tr>
+                <th>
+                    <%= user.id %>
+                </th>
+                <th>
+                    <%= user.name %>
+                </th>
+            </tr>
+        <% end %>
+        
+    </table>
+</dev>
