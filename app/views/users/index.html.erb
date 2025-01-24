@@ -14,10 +14,10 @@
         <% @users.each do |user| %>
             <tr>
                 <th>
-                    <%= user.id %>
+                  <%= user.id %>
                 </th>
                 <th>
-                    <%= user.name %>
+                  <%= link_to user.name, user_path(user.id) %>
                 </th>
             </tr>
         <% end %>
