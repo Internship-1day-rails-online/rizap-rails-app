@@ -7,4 +7,8 @@ class UsersController < ApplicationController
         @user = User.find(params[:id]) #findは指定したidのデータを取得するメソッド
     end
     
+    def new
+        @user = User.new
+    end
+    
 end
